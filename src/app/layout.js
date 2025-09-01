@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -15,7 +16,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="2xl:px-[20rem] px-10">{children}</div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="2xl:px-[20rem] px-10">{children}</div>
+        </ThemeProvider>
+
         <Footer />
       </body>
     </html>

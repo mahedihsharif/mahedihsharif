@@ -1,9 +1,14 @@
 "use client";
+
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const Navbar = () => {
+export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  //navbar scroll changeBackground function
+
   const changeBackground = () => {
     if (window.scrollY >= 66) {
       setNavbar(true);
@@ -11,89 +16,65 @@ const Navbar = () => {
       setNavbar(false);
     }
   };
+
   useEffect(() => {
     changeBackground();
-    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
-  });
+    return () => window.removeEventListener("scroll", changeBackground);
+  }, []);
+
+  const navItems = ["HOME", "SKILLS", "PROJECTS", "RESUME", "CONTACT"];
+
   return (
-    <>
-      <div
-        className={
-          navbar
-            ? "bg-blueDark navbar py-6 2xl:px-[20rem] px-8 sticky top-0 z-10"
-            : "navbar py-6 2xl:px-[20rem] px-8 sticky top-0 z-10"
-        }
-      >
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <nav
+      className={`sticky top-0 z-50 transition-colors ${
+        navbar ? "bg-blue-600/90 backdrop-blur text-white" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <Link href="/" className="text-xl font-bold">
+          Mahedi H Sharif
+        </Link>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-8 font-medium">
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                href={`#${item.toLowerCase()}`}
+                className="hover:text-blue-200 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-blueDark rounded-box w-52 gap-5 font-primary"
-            >
-              <li>
-                <a>HOME</a>
-              </li>
-              <li>
-                <a>FEATURES</a>
-              </li>
-              <li>
-                <a>PORTFOLIO</a>
-              </li>
-              <li>
-                <a>RESUME</a>
-              </li>
-              <li>
-                <a>BLOG</a>
-              </li>
-              <li>
-                <a>CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <a className="btn btn-ghost text-xl font-primary">Mahedi H Sharif</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal font-primary">
-            <li>
-              <a className="text-grayWhite">HOME</a>
+                {item}
+              </Link>
             </li>
-            <li>
-              <a>FEATURES</a>
-            </li>
-            <li>
-              <a>PORTFOLIO</a>
-            </li>
-            <li>
-              <a>RESUME</a>
-            </li>
-            <li>
-              <a>BLOG</a>
-            </li>
-            <li>
-              <a>CONTACT</a>
-            </li>
-          </ul>
+          ))}
+        </ul>
+
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="p-6">
+              <nav className="flex flex-col gap-6 mt-6 text-lg font-medium">
+                {navItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={`#${item.toLowerCase()}`}
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-    </>
+    </nav>
   );
-};
-
-export default Navbar;
+}

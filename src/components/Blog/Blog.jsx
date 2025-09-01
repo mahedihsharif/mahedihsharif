@@ -1,97 +1,51 @@
+// components/BlogSection.js
+"use client";
+import { blogs } from "@/data/data";
 import Image from "next/image";
-import { IoMdTime } from "react-icons/io";
-import Blog1 from "../../../assets/images/blog-01.jpg";
-import Blog2 from "../../../assets/images/blog-02.jpg";
-import Blog3 from "../../../assets/images/blog-03.jpg";
+import Link from "next/link";
 
-const Blog = () => {
+export default function Blog() {
   return (
-    <div className="pt-40">
-      <h3 className="text-redColor tracking-widest text-base font-secondary text-center">
-        VISIT MY BLOG AND KEEP YOUR FEEDBACK
-      </h3>
-      <h1 className="text-5xl font-secondary font-bold pt-5 pb-14 text-center">
-        My Blog
-      </h1>
-      <div className="lg:flex justify-between gap-12 mt-14">
-        <div className="card w-full bg-blueDark cursor-pointer">
-          <figure className="px-8 pt-8 ">
-            {" "}
-            <Image
-              src={Blog1}
-              width="full"
-              alt="blog image"
-              className="rounded-md"
-            />
-          </figure>
-          <div className="card-body">
-            <div className="flex justify-between">
-              <p className="uppercase text-redColor tracking-widest text-[13px] font-secondary">
-                canada
-              </p>
-              <div className="flex justify-center items-center gap-2">
-                <IoMdTime className="hover:text-redColor hover:delay-100" />
-                <span className="text-[13px]">2 min read</span>
+    <section className="py-12 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10">
+          Latest Blogs
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {blogs.slice(0, 3).map((blog) => (
+            <div
+              key={blog.id}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition"
+            >
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                  {blog.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mt-2 line-clamp-3">
+                  {blog.shortDesc}
+                </p>
+                <div className="flex justify-between items-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  <span>{blog.author}</span>
+                  <span>{blog.date}</span>
+                </div>
+                <Link
+                  href={`/blog/${blog.id}`}
+                  className="inline-block mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline"
+                >
+                  Read More →
+                </Link>
               </div>
             </div>
-            <h1 className="text-2xl font-primary font-bold mt-3">
-              T-Shirt design is the part of design
-            </h1>
-          </div>
-        </div>
-        <div className="card w-full bg-blueDark cursor-pointer maxLg:my-10">
-          <figure className="px-8 pt-8 ">
-            {" "}
-            <Image
-              src={Blog2}
-              width="full"
-              alt="blog image"
-              className="rounded-md"
-            />
-          </figure>
-          <div className="card-body">
-            <div className="flex justify-between">
-              <p className="uppercase text-redColor tracking-widest text-[13px] font-secondary">
-                development
-              </p>
-              <div className="flex justify-center items-center gap-2">
-                <IoMdTime className="hover:text-redColor hover:delay-100" />
-                <span className="text-[13px]">4 min read</span>
-              </div>
-            </div>
-            <h1 className="text-2xl font-primary font-bold mt-3">
-              The service provide for design
-            </h1>
-          </div>
-        </div>
-        <div className="card w-full bg-blueDark cursor-pointer">
-          <figure className="px-8 pt-8 ">
-            {" "}
-            <Image
-              src={Blog3}
-              width="full"
-              alt="blog image"
-              className="rounded-md"
-            />
-          </figure>
-          <div className="card-body">
-            <div className="flex justify-between">
-              <p className="uppercase text-redColor tracking-widest text-[13px] font-secondary">
-                application
-              </p>
-              <div className="flex justify-center items-center gap-2">
-                <IoMdTime className="hover:text-redColor hover:delay-100" />
-                <span className="text-[13px]">6 min read</span>
-              </div>
-            </div>
-            <h1 className="text-2xl font-primary font-bold mt-3">
-              Web App landing design & maintain
-            </h1>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Blog;
+}
