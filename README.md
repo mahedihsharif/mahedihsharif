@@ -16,6 +16,6 @@
 
   ### 📊 GitHub Stats
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=mahedihsharif&theme=tokyonight)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=mahedihsharif)](https://git.io/streak-stats)
 
 
