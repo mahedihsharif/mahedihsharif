@@ -13,4 +13,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?logo=mongodb&logoColor=white)  
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)  
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)  
-  
+
+  ### 📊 GitHub Stats  
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=mahedihsharif&theme=tokyonight)
+
