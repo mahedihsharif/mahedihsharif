@@ -15,5 +15,5 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)  
 
   ### 📊 GitHub Stats  
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=mahedihsharif&theme=tokyonight)
+https://github-readme-streak-stats.herokuapp.com/?user=mahedihsharif&theme=tokyonight
 
