@@ -1,7 +1,7 @@
 ![Cover](https://raw.githubusercontent.com/mahedihsharif/mahedihsharif/refs/heads/main/assets/images/mahedi%20h%20sharif.png)
 
 
-✨ I work on Web Development, focusing on building modern, user-friendly applications using JavaScript, React, Next.js, Node.js, and MongoDB. I’m also exploring Data Science and always eager to learn new technologies.
+✨ Full-Stack Engineer Specializing in TypeScript, developing Scalable Web Applications with React, Next.js, Node.js, PostgreSQL, and MongoDB. Passionate about AI, System Design, and building Production-grade software.
 
 ### 🚀 Technologies I Use  
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)  
