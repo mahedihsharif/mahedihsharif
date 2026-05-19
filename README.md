@@ -1,4 +1,4 @@
-![Cover](https://raw.githubusercontent.com/mahedihsharif/mahedihsharif/refs/heads/main/assets/images/mahedi%20h%20sharif.png)
+![Cover](./banner.svg)
 
 
 ✨ Full-Stack Engineer who turns ideas into scalable, production-ready web applications. Specializing in TypeScript, React, Next.js, and Node.js — with a strong foundation in both SQL and NoSQL databases. Deeply interested in AI integration, system design, and writing code 
