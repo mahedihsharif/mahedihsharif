@@ -1,7 +1,8 @@
 ![Cover](https://raw.githubusercontent.com/mahedihsharif/mahedihsharif/refs/heads/main/assets/images/mahedi%20h%20sharif.png)
 
 
-✨ Full-Stack Engineer Specializing in TypeScript, developing Scalable Web Applications with React, Next.js, Node.js, PostgreSQL, and MongoDB. Passionate about AI, System Design, and building Production-grade software.
+✨ Full-Stack Engineer who turns ideas into scalable, production-ready web applications. Specializing in TypeScript, React, Next.js, and Node.js — with a strong foundation in both SQL and NoSQL databases. Deeply interested in AI integration, system design, and writing code 
+that scales without breaking a sweat.
 
 ### 🚀 Technologies I Use  
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)  
